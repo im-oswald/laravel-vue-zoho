@@ -18,7 +18,9 @@
     @vite('resources/css/app.css')
   </head>
   <body class="antialiased">
-    <div id="app"></div>
+    <div id="app">
+      <router-view />
+    </div>
 
     @vite('resources/js/app.js')
   </body>
