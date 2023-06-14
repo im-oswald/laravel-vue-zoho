@@ -1,18 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-import DealForm from '../components/deal/DealForm.vue';
-import AccountForm from '../components/account/AccountForm.vue';
+import Form from '../components/form/Form.vue';
 
 const routes = [
   {
-    path: '/deals/create',
-    name: 'deals.create',
-    component: DealForm
-  },
-  {
-    path: '/accounts/create',
-    name: 'accounts.create',
-    component: AccountForm
+    path: '/create',
+    name: 'create',
+    component: Form
   },
 ];
 
