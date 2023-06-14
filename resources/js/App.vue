@@ -1,11 +1,15 @@
 <template>
-  <h1> Hello, Vuejs with Laravel </h1>
+  <div class="container">
+    <Form />
+  </div>
 </template>
 
 <script>
+  import Form from './components/form/Form.vue';
+
   export default {
-    setup() {
-  
+    components: {
+      Form
     }
   }
 </script>
