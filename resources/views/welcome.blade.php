@@ -18,6 +18,13 @@
       <router-view />
     </div>
 
+    <script>
+      @if(isset($access_token) && isset($refresh_token) && isset($access_token_create_at))
+        localStorage.setItem('access_token', '<?php  echo $access_token ?>');
+        localStorage.setItem('refresh_token', '<?php  echo $refresh_token ?>');
+        localStorage.setItem('access_token_created_at', '<?php  echo $access_token_created_at ?>');
+      @endif
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     @vite('resources/js/app.js')
   </body>

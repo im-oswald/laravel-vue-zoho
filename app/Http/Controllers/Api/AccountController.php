@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\AccountRequest;
 use App\Http\Controllers\Api\ApiController as Controller;
-use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 
 class AccountController extends Controller

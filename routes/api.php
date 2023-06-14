@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DealController;
 use App\Http\Controllers\Api\AccountController;
+use App\Http\Controllers\Api\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Account
 Route::post('/account', [AccountController::class, 'store'])->name('account.create');
+
+// Auth Callback
+Route::get('/auth/callback', [AuthController::class, 'callback'])->name('auth.callback');
