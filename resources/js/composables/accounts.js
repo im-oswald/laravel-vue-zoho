@@ -7,7 +7,13 @@ export default function useAccounts() {
   const storeAccount = async (data) => {
     errors.value = ''
     try {
-      await axios.post('/api/account', data)
+      await axios.post('/api/account', data, {
+        headers: {
+          'Access-Token': localStorage.getItem('access_token'),
+          'Refresh-Token': localStorage.getItem('refresh_token'),
+          'Access-Token-Created-At': localStorage.getItem('access_token_created_at')
+        }
+      })
       // TODO: show alert here
     } catch (e) {
       // TODO: handle other errors here

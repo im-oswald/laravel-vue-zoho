@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Api\ApiController as Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use App\Services\Zoho\Authentication\FetchAccessToken;
 
 class AuthController extends Controller

@@ -19,7 +19,7 @@
     </div>
 
     <script>
-      @if(isset($access_token) && isset($refresh_token) && isset($access_token_create_at))
+      @if(isset($access_token) && isset($refresh_token) && isset($access_token_created_at))
         localStorage.setItem('access_token', '<?php  echo $access_token ?>');
         localStorage.setItem('refresh_token', '<?php  echo $refresh_token ?>');
         localStorage.setItem('access_token_created_at', '<?php  echo $access_token_created_at ?>');
