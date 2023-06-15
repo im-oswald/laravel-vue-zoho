@@ -3,7 +3,6 @@
 namespace App\Services\Zoho\Modules\Deals;
 
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Session;
 use App\Services\Zoho\Modules\Base;
 
 class CreateDeal extends Base

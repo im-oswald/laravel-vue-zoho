@@ -26,3 +26,4 @@ Route::post('/account', [AccountController::class, 'store'])->name('account.crea
 
 // Auth Callback
 Route::get('/auth/callback', [AuthController::class, 'callback'])->name('auth.callback');
+Route::post('/token/refresh', [AuthController::class, 'refreshToken'])->name('auth.refreshToken');

@@ -47,12 +47,6 @@ export default {
     Errors
   },
 
-  mounted() {
-    if (!localStorage.getItem('refresh_token')) {
-      this.$router.push({ path: '/auth/zoho/callback' });
-    }
-  },
-
   setup() {
     const account = reactive({
       name: '',
