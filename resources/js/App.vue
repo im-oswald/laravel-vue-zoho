@@ -26,7 +26,7 @@
       }
 
       this.intervalValue = setTimeout(() => {
-        if(!checkPastTime()) {
+        if(checkPastTime()) {
           refreshToken()
         }
       }, 1000);

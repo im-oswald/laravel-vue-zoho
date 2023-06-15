@@ -1,8 +1,10 @@
 import { ref } from 'vue'
 import axios from "axios"
+import { useToastr } from '../composables/toastr'
 
 export default function useAccounts() {
   const errors = ref('')
+  const { showSuccessMessage, showErrorMessage } = useToastr();
 
   const storeAccount = async (data) => {
     errors.value = ''
@@ -14,11 +16,15 @@ export default function useAccounts() {
           'Access-Token-Created-At': localStorage.getItem('access_token_created_at')
         }
       })
-      // TODO: show alert here
+      
+      showSuccessMessage('Account and Deal created successfully')
     } catch (e) {
-      // TODO: handle other errors here
       if (e.response.status === 422) {
         errors.value = e.response.data.errors
+      }
+
+      if (e.response.status === 400) {
+        showSuccessMessage('Error creating Account and Deal')
       }
     }
   }

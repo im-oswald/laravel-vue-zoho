@@ -22,6 +22,13 @@ class AccountController extends Controller
       $validated['phone']
     );
 
+    if ($response['data']['status'] === 'error') {
+      return response()->json([
+        'message' => 'Error',
+        'data' => $response,
+      ], 400);
+    }
+
     if($response['data'][0]['code'] === 'SUCCESS') {
       $createDealService = new CreateDeal($request->header('Access-Token'));
 
