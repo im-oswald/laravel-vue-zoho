@@ -22,7 +22,7 @@ class AccountController extends Controller
       $validated['phone']
     );
 
-    if ($response['data']['status'] === 'error') {
+    if (isset($response['data']['status']) && $response['data']['status'] === 'error') {
       return response()->json([
         'message' => 'Error',
         'data' => $response,

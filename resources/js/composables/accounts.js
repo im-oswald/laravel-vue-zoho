@@ -18,14 +18,19 @@ export default function useAccounts() {
       })
       
       showSuccessMessage('Account and Deal created successfully')
+
+      return true
     } catch (e) {
       if (e.response.status === 422) {
         errors.value = e.response.data.errors
+        return true
       }
 
       if (e.response.status === 400) {
         showSuccessMessage('Error creating Account and Deal')
       }
+
+      return false
     }
   }
 

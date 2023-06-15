@@ -61,7 +61,15 @@ export default {
     const { errors, storeAccount } = useAccounts()
 
     const saveAccount = async () => {
-      await storeAccount({ ...account })
+      const success = await storeAccount({ ...account })
+
+      if (success) {
+        account.name = ''
+        account.website = ''
+        account.phone = ''
+        account.deal.name = ''
+        account.deal.stage = ''
+      }
     }
 
     return {
