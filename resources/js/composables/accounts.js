@@ -4,10 +4,12 @@ import { useToastr } from '../composables/toastr'
 
 export default function useAccounts() {
   const errors = ref('')
+  const loading = ref(false)
   const { showSuccessMessage, showErrorMessage } = useToastr();
 
   const storeAccount = async (data) => {
     errors.value = ''
+    loading.value = true
     try {
       await axios.post('/api/account', data, {
         headers: {
@@ -17,6 +19,7 @@ export default function useAccounts() {
         }
       })
       
+      loading.value = false
       showSuccessMessage('Account and Deal created successfully')
 
       return true
@@ -29,12 +32,14 @@ export default function useAccounts() {
         showSuccessMessage('Error creating Account and Deal')
       }
 
+      loading.value = false
       return false
     }
   }
 
   return {
     storeAccount,
-    errors
+    errors,
+    loading,
   }
 }

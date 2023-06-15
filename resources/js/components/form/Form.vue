@@ -33,7 +33,7 @@
       </div>
     </div>
 
-    <button type="submit" class="btn btn-success mt-4">Create</button>
+    <button type="submit" class="btn btn-success mt-4" :disabled="loading">Create</button>
   </form>
 </template>
 
@@ -58,7 +58,7 @@ export default {
       }
     })
 
-    const { errors, storeAccount } = useAccounts()
+    const { errors, storeAccount, loading } = useAccounts()
 
     const saveAccount = async () => {
       const success = await storeAccount({ ...account })
@@ -75,7 +75,8 @@ export default {
     return {
       account,
       errors,
-      saveAccount
+      saveAccount,
+      loading
     }
   }
 }
