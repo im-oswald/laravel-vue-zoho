@@ -23,7 +23,6 @@ export default function useAccounts() {
     } catch (e) {
       if (e.response.status === 422) {
         errors.value = e.response.data.errors
-        return true
       }
 
       if (e.response.status === 400) {

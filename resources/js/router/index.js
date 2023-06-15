@@ -5,7 +5,7 @@ import Form from '../components/form/Form.vue';
 // TODO: Move the constants to env file
 const ZOHO_CLIENT_ID = "1000.5L4YBDB7Y182AQ4UYLEB99J2Y003VT"
 const ZOHO_SCOPES = "ZohoCRM.modules.deals.CREATE,ZohoCRM.modules.accounts.CREATE,ZohoCRM.modules.accounts.READ"
-const REDIRECT_URI = "https://zoho.in.ngrok.io/api/auth/callback/"
+const REDIRECT_URI = "http://localhost:8000/api/auth/callback/"
 
 const routes = [
   {
